@@ -38,7 +38,8 @@ function tglID(iso: string): string {
   });
 }
 
-export default function AdminPanel({ pin }: { pin: string }) {
+// TANPA prop pin — PIN divalidasi server-side, tidak boleh ikut ke bundle client.
+export default function AdminPanel() {
   const [key, setKey] = useState("");
   const [authed, setAuthed] = useState(false);
   const [orders, setOrders] = useState<Order[] | null>(null);
@@ -54,12 +55,12 @@ export default function AdminPanel({ pin }: { pin: string }) {
         headers: { "x-admin-key": key },
       });
       if (!res.ok) {
-        setError("PIN salah.");
+        const d = await res.json().catch(() => ({}));
+        setError(d.error ?? "PIN salah.");
         return;
       }
-      const data = await res.json();
+      setOrders(await res.json());
       setAuthed(true);
-      setOrders(data);
     } catch {
       setError("Gagal memuat data.");
     } finally {
@@ -71,10 +72,10 @@ export default function AdminPanel({ pin }: { pin: string }) {
     const res = await fetch("/api/admin/status", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ key: pin, id, status }),
+      body: JSON.stringify({ key, id, status }),
     });
     if (!res.ok) {
-      const d = await res.json();
+      const d = await res.json().catch(() => ({}));
       setError(d.error ?? "Gagal update status");
       return;
     }

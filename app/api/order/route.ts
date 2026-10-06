@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createOrder, listOrders, storeDurable } from "@/lib/orders";
+import { createOrder, listOrders, storeDurable, storeBackend } from "@/lib/orders";
 import { paket, designs, site } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
@@ -7,10 +7,14 @@ export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
   // daftar order berisi data customer — hanya boleh dibaca admin
   // PIN lewat header (jangan query string: URL ikut masuk log server)
-  const key =
-    req.headers.get("x-admin-key") ??
-    new URL(req.url).searchParams.get("key") ??
-    "";
+  if (!site.adminKey) {
+    // ADMIN_KEY belum diset: tutup total, jangan sampai ada bypass
+    return NextResponse.json(
+      { error: "ADMIN_KEY belum dikonfigurasi di server" },
+      { status: 503 },
+    );
+  }
+  const key = req.headers.get("x-admin-key") ?? "";
   if (key !== site.adminKey) {
     return NextResponse.json({ error: "PIN admin diperlukan" }, { status: 401 });
   }
@@ -62,7 +66,7 @@ export async function POST(req: Request) {
 
   const order = await createOrder(input);
   return NextResponse.json(
-    { order, persisten: storeDurable() },
+    { order, persisten: storeDurable(), backend: storeBackend() },
     { status: 201 },
   );
 }

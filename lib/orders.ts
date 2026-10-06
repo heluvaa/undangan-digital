@@ -1,77 +1,26 @@
-// Penyimpanan order & ucapan: file JSON sederhana.
-// Catatan: butuh filesystem persisten (VPS / `next start`).
-// Kalau deploy serverless (Vercel), ganti ke DB — lihat README.
+// Domain: order state machine + ucapan. Storage di belakang store.ts.
 
-import { promises as fs } from "fs";
-import path from "path";
 import { hargaPaket } from "./content";
+import {
+  bacaOrders,
+  simpanOrders,
+  bacaUcapan,
+  simpanUcapan,
+  storeDurable,
+  storeBackend,
+} from "./store";
+import {
+  STATUS_URUT,
+  type Order,
+  type OrderStatus,
+  type Ucapan,
+} from "./types";
 
-export type OrderStatus = "baru" | "dibayar" | "dikerjakan" | "selesai";
-
-export const STATUS_URUT: OrderStatus[] = [
-  "baru",
-  "dibayar",
-  "dikerjakan",
-  "selesai",
-];
-
-export type Order = {
-  id: string;
-  kode: string;
-  dibuat: string; // ISO
-  status: OrderStatus;
-  paket: string;
-  design: string;
-  harga: number; // dihitung server dari paket
-  nama: string;
-  wa: string;
-  namaAcara: string;
-  tanggalAcara: string;
-  lokasi: string;
-  mapsUrl: string;
-  catatan: string;
-};
-
-export type Ucapan = {
-  id: string;
-  undangan: string;
-  nama: string;
-  ucapan: string;
-  hadir: "hadir" | "tidak" | "ragu";
-  dibuat: string;
-};
-
-const DATA_DIR = path.resolve(
-  process.env.DATA_DIR ?? path.join(process.cwd(), "data"),
-);
-const ORDERS_FILE = path.join(DATA_DIR, "orders.json");
-const UCAPAN_FILE = path.join(DATA_DIR, "ucapan.json");
-
-let durable: boolean | null = null;
-
-// true  = filesystem persisten (VPS / `next start`) -> order awet.
-// false = serverless (Vercel) -> tulisan JSON bisa hilang antar invocation.
-export function storeDurable(): boolean {
-  if (durable === null) durable = !process.env.VERCEL;
-  return durable;
-}
-
-async function baca<T>(file: string): Promise<T[]> {
-  try {
-    const raw = await fs.readFile(file, "utf8");
-    return JSON.parse(raw) as T[];
-  } catch {
-    return [];
-  }
-}
-
-async function tulis<T>(file: string, data: T[]): Promise<void> {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  await fs.writeFile(file, JSON.stringify(data, null, 2), "utf8");
-}
+export { storeDurable, storeBackend, STATUS_URUT };
+export type { Order, OrderStatus, Ucapan };
 
 export async function listOrders(): Promise<Order[]> {
-  const orders = await baca<Order>(ORDERS_FILE);
+  const orders = await bacaOrders();
   return orders.sort((a, b) => (a.dibuat < b.dibuat ? 1 : -1));
 }
 
@@ -86,7 +35,7 @@ export async function createOrder(input: {
   mapsUrl: string;
   catatan: string;
 }): Promise<Order> {
-  const orders = await baca<Order>(ORDERS_FILE);
+  const orders = await bacaOrders();
   const now = new Date();
   const kode = `UDN-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}-${String(orders.length + 1).padStart(3, "0")}`;
   const order: Order = {
@@ -107,7 +56,7 @@ export async function createOrder(input: {
     catatan: input.catatan,
   };
   orders.push(order);
-  await tulis(ORDERS_FILE, orders);
+  await simpanOrders(orders);
   return order;
 }
 
@@ -116,16 +65,16 @@ export async function updateStatus(
   status: OrderStatus,
 ): Promise<Order | null> {
   if (!STATUS_URUT.includes(status)) return null;
-  const orders = await baca<Order>(ORDERS_FILE);
+  const orders = await bacaOrders();
   const order = orders.find((o) => o.id === id);
   if (!order) return null;
   order.status = status;
-  await tulis(ORDERS_FILE, orders);
+  await simpanOrders(orders);
   return order;
 }
 
 export async function listUcapan(undangan: string): Promise<Ucapan[]> {
-  const all = await baca<Ucapan>(UCAPAN_FILE);
+  const all = await bacaUcapan();
   return all
     .filter((u) => u.undangan === undangan)
     .sort((a, b) => (a.dibuat < b.dibuat ? 1 : -1));
@@ -137,7 +86,7 @@ export async function createUcapan(input: {
   ucapan: string;
   hadir: string;
 }): Promise<Ucapan> {
-  const all = await baca<Ucapan>(UCAPAN_FILE);
+  const all = await bacaUcapan();
   const hadir: Ucapan["hadir"] =
     input.hadir === "hadir" || input.hadir === "tidak" ? input.hadir : "ragu";
   const u: Ucapan = {
@@ -149,6 +98,6 @@ export async function createUcapan(input: {
     dibuat: new Date().toISOString(),
   };
   all.push(u);
-  await tulis(UCAPAN_FILE, all);
+  await simpanUcapan(all);
   return u;
 }

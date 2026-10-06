@@ -50,7 +50,7 @@ Teks situs, harga, paket, nomor WA, rekening: **`lib/content.ts`**.
 ## WAJIB GANTI SEBELUM LIVE
 
 - [ ] `lib/content.ts` → `site.wa` (nomor WhatsApp bisnis)
-- [ ] `lib/content.ts` → `site.adminKey` (PIN `/admin` — jangan pakai default)
+- [ ] Set env `ADMIN_KEY` (PIN `/admin`) di `.env.local` / Vercel Environment Variables
 - [ ] `lib/content.ts` → `pembayaran.rekening` (nomor rekening asli)
 - [ ] `lib/content.ts` → `site.demo = false` setelah testimoni diganti data asli
 - [ ] `app/layout.tsx` → `metadataBase` + `app/robots.ts` + `app/sitemap.ts`

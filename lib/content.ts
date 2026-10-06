@@ -7,7 +7,9 @@ export const site = {
   brand: "UndanganKu",
   tagline: "Undangan Digital Custom",
   wa: "6281913711189", // ganti dengan nomor WhatsApp bisnis (format 62...)
-  adminKey: "ganti-dengan-pin-admin", // PIN admin untuk /admin — GANTI!
+  // PIN admin dibaca dari env ADMIN_KEY (tidak ikut ter-commit ke GitHub).
+  // Set di .env.local (lokal) atau Vercel Project Settings > Environment Variables.
+  adminKey: process.env.ADMIN_KEY ?? "",
   demo: true, // true = tampil badge DEMO (testimoni masih contoh). Set false setelah data asli diisi.
   deskripsi:
     "Jasa pembuatan undangan digital custom. Pilih desain favoritmu, kami buatkan, link jadinya dikirim via WhatsApp.",

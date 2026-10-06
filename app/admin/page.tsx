@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import AdminPanel from "@/components/AdminPanel";
-import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Admin — Order",
@@ -23,7 +22,7 @@ export default function AdminPage() {
             <h1 className="mt-3 font-serif text-4xl">Kelola Order</h1>
           </header>
           <div className="mt-10">
-            <AdminPanel pin={site.adminKey} />
+            <AdminPanel />
           </div>
         </div>
       </main>

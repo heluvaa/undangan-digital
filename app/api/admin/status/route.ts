@@ -12,6 +12,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Body bukan JSON valid" }, { status: 400 });
   }
 
+  if (!site.adminKey) {
+    return NextResponse.json(
+      { error: "ADMIN_KEY belum dikonfigurasi di server" },
+      { status: 503 },
+    );
+  }
   const key = String(body.key ?? "");
   if (key !== site.adminKey) {
     return NextResponse.json({ error: "PIN admin salah" }, { status: 401 });
