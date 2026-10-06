@@ -10,7 +10,7 @@ export const site = {
   // PIN admin dibaca dari env ADMIN_KEY (tidak ikut ter-commit ke GitHub).
   // Set di .env.local (lokal) atau Vercel Project Settings > Environment Variables.
   adminKey: process.env.ADMIN_KEY ?? "",
-  demo: true, // true = tampil badge DEMO (testimoni masih contoh). Set false setelah data asli diisi.
+  demo: false, // true = tampil badge DEMO di footer kalau ada konten contoh/karangan.
   deskripsi:
     "Jasa pembuatan undangan digital custom. Pilih desain favoritmu, kami buatkan, link jadinya dikirim via WhatsApp.",
 };
@@ -190,13 +190,17 @@ export const langkahOrder = [
 ];
 
 // ---------- PEMBAYARAN (manual) ----------
+// REKENING BANK: isi dengan data asli. SELAGI KOSONG, tidak ditampilkan —
+// tidak ada uang customer yang nyasar ke nomor palsu.
+//   { bank: "BCA", noRek: "1234567890", atasNama: "Nama Sesuai Rekening" },
+// E-WALLET: nomor tujuan transfer (DANA, GoPay, OVO, ShopeePay).
+// QRIS: file gambar hasil crop di public/qris.png.
 export const pembayaran = {
-  rekening: [
-    { bank: "BCA", noRek: "0000000000", atasNama: "NAMA PEMILIK" }, // GANTI
-    { bank: "Mandiri", noRek: "0000000000000", atasNama: "NAMA PEMILIK" }, // GANTI
-  ],
+  rekening: [] as { bank: string; noRek: string; atasNama: string }[],
+  ewallet: [{ nama: "DANA", no: "081615680060", atasNama: "" }],
+  qrisImage: "/qris.png",
   qrisNote:
-    "Pakai QRIS? Minta gambar QRIS resmi via WhatsApp — kami kirim langsung, scan dari aplikasi bank/e-wallet kamu.",
+    "Scan kode QRIS di atas dengan aplikasi bank/e-wallet apa pun. Periksa nama penerima sebelum bayar. Mau versi gambar via WhatsApp? Chat kami.",
   catatan: [
     "Pembayaran dilakukan di awal, sebelum undangan dikerjakan.",
     "Kirim bukti transfer via WhatsApp, disertai kode order dari form.",
@@ -204,21 +208,14 @@ export const pembayaran = {
   ],
 };
 
-// ---------- TESTIMONI (masih contoh — set site.demo=false setelah ganti data asli) ----------
-export const testimoni = [
-  {
-    nama: "Rina & Dimas",
-    acara: "Wedding, Bandung",
-    isi: "Undangannya cantik banget, tamu pada nanya dibikin di mana. Prosesnya cepat, revisi juga sabar.",
-  },
-  {
-    nama: "Keluarga Pak Hasan",
-    acara: "Khitanan, Bekasi",
-    isi: "Anak saya senang, desainnya elegan. Tinggal kirim data, jadinya rapi tanpa ribet.",
-  },
-  {
-    nama: "Ayu Lestari",
-    acara: "Ulang Tahun, Jakarta",
-    isi: "Harga masuk akal, hasil premium. Countdown sama peta lokasinya membantu banget buat tamu.",
-  },
-];
+// ---------- TESTIMONI ----------
+// ISI DENGAN TESTIMONI ASLI dari pelangganmu — dan minta izin dulu sebelum
+// pakai nama asli mereka. SELAGI KOSONG, bagian testimoni tidak tampil sama
+// sekali. Menampilkan testimoni karangan di website jualan = iklan menyesatkan
+// (UU ITE / UU Perlindungan Konsumen), jangan pernah isi dengan karangan.
+//   { nama: "Rina & Dimas", acara: "Wedding, Bandung", isi: "…" },
+export const testimoni = [] as {
+  nama: string;
+  acara: string;
+  isi: string;
+}[];

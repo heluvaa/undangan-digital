@@ -50,26 +50,63 @@ export default function CaraOrder() {
           <section className="mt-14">
             <h2 className="font-serif text-2xl">Cara Pembayaran</h2>
             <p className="mt-2 text-sm text-ink-soft">
-              Bayar sesuai nominal paket yang dipilih, ke salah satu rekening berikut.
+              Bayar sesuai nominal paket yang dipilih, lewat QRIS, e-wallet, atau
+              transfer bank.
             </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {pembayaran.rekening.map((r) => (
-                <div key={r.bank} className="rounded-xl border border-border bg-card p-5 text-center">
-                  <p className="text-xs font-medium tracking-[0.25em] text-ink-soft uppercase">
-                    Transfer {r.bank}
-                  </p>
-                  <p className="mt-2 font-serif text-2xl tracking-widest tabular-nums">
-                    {r.noRek}
-                  </p>
-                  <p className="mt-1 text-sm text-ink-soft">a.n. {r.atasNama}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 rounded-xl border border-gold/40 bg-gold-pale p-5">
-              <p className="text-sm">
-                <span className="font-medium">QRIS:</span> {pembayaran.qrisNote}
+
+            {/* QRIS */}
+            <div className="mt-6 rounded-xl border border-gold/40 bg-gold-pale p-6 text-center">
+              <p className="text-xs font-medium tracking-[0.25em] text-gold uppercase">
+                QRIS — bisa dari semua e-wallet & m-banking
+              </p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={pembayaran.qrisImage}
+                alt="Kode QRIS pembayaran"
+                width={320}
+                height={320}
+                className="mx-auto mt-4 w-64 rounded-lg border border-border bg-white p-2 sm:w-80"
+              />
+              <p className="mx-auto mt-4 max-w-sm text-sm">
+                {pembayaran.qrisNote}
               </p>
             </div>
+
+            {/* e-wallet */}
+            {pembayaran.ewallet.length > 0 && (
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {pembayaran.ewallet.map((e) => (
+                  <div key={e.nama} className="rounded-xl border border-border bg-card p-5 text-center">
+                    <p className="text-xs font-medium tracking-[0.25em] text-ink-soft uppercase">
+                      Transfer {e.nama}
+                    </p>
+                    <p className="mt-2 font-serif text-2xl tracking-widest tabular-nums">
+                      {e.no}
+                    </p>
+                    {e.atasNama && (
+                      <p className="mt-1 text-sm text-ink-soft">a.n. {e.atasNama}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* rekening bank — hanya tampil kalau sudah diisi */}
+            {pembayaran.rekening.length > 0 && (
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {pembayaran.rekening.map((r) => (
+                  <div key={r.bank} className="rounded-xl border border-border bg-card p-5 text-center">
+                    <p className="text-xs font-medium tracking-[0.25em] text-ink-soft uppercase">
+                      Transfer {r.bank}
+                    </p>
+                    <p className="mt-2 font-serif text-2xl tracking-widest tabular-nums">
+                      {r.noRek}
+                    </p>
+                    <p className="mt-1 text-sm text-ink-soft">a.n. {r.atasNama}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
 
           {/* catatan */}

@@ -189,7 +189,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ============ TESTIMONI ============ */}
+        {/* ============ TESTIMONI (hanya tampil kalau ada testimoni asli) ============ */}
+        {testimoni.length > 0 && (
         <section className="reveal px-4 py-16 sm:px-6">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-center font-serif text-3xl sm:text-4xl">
@@ -214,6 +215,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        )}
 
         {/* ============ CTA ============ */}
         <section className="reveal bg-ink px-4 py-20 text-center text-white sm:px-6">
