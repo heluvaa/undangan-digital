@@ -1,0 +1,102 @@
+{
+  "wedding-elegan": [
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/wedding-elegan-1.jpg",
+      "title": "Mel and Harry",
+      "creator": "avocadogirlfriend",
+      "src": "https://www.flickr.com/photos/57998180@N02/6320737478",
+      "lic": "by",
+      "w": 1023,
+      "h": 574
+    },
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/wedding-elegan-2.jpg",
+      "title": "Our Wedding 2009 Vows",
+      "creator": "Troubadour",
+      "src": "https://www.flickr.com/photos/54172123@N00/8407359028",
+      "lic": "by",
+      "w": 1024,
+      "h": 683
+    }
+  ],
+  "wedding-floral": [
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/wedding-floral-0.jpg",
+      "title": "morose { not explored }",
+      "creator": "mayeesherr.",
+      "src": "https://www.flickr.com/photos/16503481@N04/9355706808",
+      "lic": "by",
+      "w": 1024,
+      "h": 817
+    },
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/wedding-floral-8.jpg",
+      "title": "WEDDING courtesty of Kevin Duncan PROPHOTO.CA",
+      "creator": "jumpyjodes",
+      "src": "https://www.flickr.com/photos/24649496@N00/2011265527",
+      "lic": "by",
+      "w": 685,
+      "h": 1023
+    }
+  ],
+  "khitanan": [
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/khitanan-1.jpg",
+      "title": "Smiling little boy in a suit",
+      "creator": "simpleinsomnia",
+      "src": "https://www.flickr.com/photos/95329455@N02/15773896652",
+      "lic": "by",
+      "w": 694,
+      "h": 1024
+    },
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/khitanan-5.jpg",
+      "title": "Well-Dressed Brody",
+      "creator": "Tobyotter",
+      "src": "https://www.flickr.com/photos/78428166@N00/7066405713",
+      "lic": "by",
+      "w": 768,
+      "h": 1024
+    }
+  ],
+  "tasyakuran": [
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/tasyakuran-7.jpg",
+      "title": "Family Street Portrait | Kuala Lumpur | Feb 2014",
+      "creator": "Johnragai-Moment Catcher",
+      "src": "https://www.flickr.com/photos/40642065@N06/12787061034",
+      "lic": "by",
+      "w": 1024,
+      "h": 768
+    },
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/tasyakuran-2.jpg",
+      "title": "Traditionally dressed kids",
+      "creator": "NeilsPhotography",
+      "src": "https://www.flickr.com/photos/21976354@N07/2931285932",
+      "lic": "by",
+      "w": 1024,
+      "h": 793
+    }
+  ],
+  "ulang-tahun": [
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/ulang-tahun-0.jpg",
+      "title": "Birthday party",
+      "creator": "Phuketian.S",
+      "src": "https://www.flickr.com/photos/124790945@N06/41549906344",
+      "lic": "by",
+      "w": 807,
+      "h": 1024
+    },
+    {
+      "path": "/data/data/com.termux/files/home/undangan-digital/.photo-raw/ulang-tahun-6.jpg",
+      "title": "Mah Birfday!",
+      "creator": "CarbonNYC [in SF!]",
+      "src": "https://www.flickr.com/photos/15923063@N00/4399933374",
+      "lic": "by",
+      "w": 679,
+      "h": 1024
+    }
+  ]
+}

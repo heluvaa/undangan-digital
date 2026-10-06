@@ -85,7 +85,7 @@ export const undanganDemo: Record<string, InvitationData> = {
         mapsUrl: "https://maps.google.com/?q=Gedung+Sasana+Budaya+Bandung",
       },
     ],
-    galeri: ["/foto/1.svg", "/foto/2.svg", "/foto/3.svg", "/foto/4.svg"],
+    galeri: ["/foto/1.jpg", "/foto/2.jpg", "/foto/3.jpg", "/foto/4.jpg"],
     kisah: [
       {
         tahun: "2021",
@@ -148,7 +148,7 @@ export const undanganDemo: Record<string, InvitationData> = {
         mapsUrl: "https://maps.google.com/?q=The+Green+Garden+Depok",
       },
     ],
-    galeri: ["/foto/1.svg", "/foto/2.svg", "/foto/3.svg", "/foto/4.svg"],
+    galeri: ["/foto/1.jpg", "/foto/2.jpg", "/foto/3.jpg", "/foto/4.jpg"],
     kisah: [
       {
         tahun: "2022",
@@ -192,7 +192,7 @@ export const undanganDemo: Record<string, InvitationData> = {
         mapsUrl: "https://maps.google.com/?q=Jl+Melati+Raya+Bekasi",
       },
     ],
-    galeri: ["/foto/1.svg", "/foto/2.svg", "/foto/3.svg"],
+    galeri: ["/foto/1.jpg", "/foto/2.jpg", "/foto/3.jpg"],
     rsvpBuka: true,
     amplop: [{ bank: "Mandiri", noRek: "1112223334445", atasNama: "Ahmad Fauzi" }],
     catatanKaki:

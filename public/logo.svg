@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c9a227;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Ikon cincin elegant -->
+  <g transform="translate(15, 30)">
+    <!-- Cincin kiri -->
+    <circle cx="0" cy="0" r="10" fill="none" stroke="url(#goldGradient)" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="7" fill="none" stroke="url(#goldGradient)" stroke-width="1"/>
+    
+    <!-- Cincin kanan (overlap) -->
+    <circle cx="14" cy="0" r="10" fill="none" stroke="url(#goldGradient)" stroke-width="2.5"/>
+    <circle cx="14" cy="0" r="7" fill="none" stroke="url(#goldGradient)" stroke-width="1"/>
+    
+    <!-- Ornamen berlian kecil -->
+    <path d="M 7,0 L 5,-4 L 9,-4 Z" fill="url(#goldGradient)"/>
+  </g>
+  
+  <!-- Teks brand -->
+  <text x="50" y="26" font-family="'Georgia', serif" font-size="18" font-weight="600" fill="url(#goldGradient)" letter-spacing="1">
+    Undangkan Aja
+  </text>
+  <text x="50" y="40" font-family="'Arial', sans-serif" font-size="9" fill="#8b7355" letter-spacing="2.5" opacity="0.8">
+    UNDANGAN DIGITAL CUSTOM
+  </text>
+</svg>

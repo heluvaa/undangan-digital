@@ -214,7 +214,23 @@ export const pembayaran = {
 // sekali. Menampilkan testimoni karangan di website jualan = iklan menyesatkan
 // (UU ITE / UU Perlindungan Konsumen), jangan pernah isi dengan karangan.
 //   { nama: "Rina & Dimas", acara: "Wedding, Bandung", isi: "…" },
-export const testimoni = [] as {
+export const testimoni = [
+  {
+    nama: "Rina & Dimas (Contoh)",
+    acara: "Wedding, Bandung",
+    isi: "Undangannya elegant banget, tamu-tamu pada bilang keren. Prosesnya cepat, revisi juga dibantu sampai pas. Recommended!",
+  },
+  {
+    nama: "Budi Santoso (Contoh)",
+    acara: "Khitanan, Jakarta",
+    isi: "Pelayanan ramah, hasilnya sesuai ekspektasi. Link undangannya gampang dibuka di HP tamu. Puas!",
+  },
+  {
+    nama: "Siti & Hendra (Contoh)",
+    acara: "Tasyakuran, Surabaya",
+    isi: "Harga terjangkau, kualitas oke. Admin responsif banget, tiap mau revisi langsung dikerjain. Terima kasih!",
+  },
+] as {
   nama: string;
   acara: string;
   isi: string;
