@@ -1,0 +1,64 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#f8f4ef"/>
+  
+  <!-- Texture -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#d4a574" opacity="0.1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#f4e4d4;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f8f4ef;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="400" height="600" fill="url(#dots)"/>
+  <ellipse cx="200" cy="150" rx="180" ry="120" fill="url(#glow)"/>
+  
+  <!-- Top ornament -->
+  <g transform="translate(200, 70)">
+    <path d="M 0 -15 Q 8 -10 12 0 Q 8 10 0 15 Q -8 10 -12 0 Q -8 -10 0 -15" fill="#c9904d" opacity="0.3"/>
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#c9904d" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Bismillah -->
+  <text x="200" y="110" font-family="serif" font-size="13" fill="#8b6f47" text-anchor="middle" letter-spacing="2" opacity="0.9">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</text>
+  
+  <!-- Title -->
+  <text x="200" y="150" font-family="serif" font-size="12" fill="#8b6f47" text-anchor="middle" letter-spacing="3" opacity="0.7">TASYAKURAN</text>
+  <text x="200" y="170" font-family="serif" font-size="11" fill="#8b6f47" text-anchor="middle" letter-spacing="2" opacity="0.6">KELAHIRAN PUTRA</text>
+  
+  <!-- Main content box -->
+  <rect x="70" y="200" width="260" height="180" rx="8" fill="none" stroke="#d4a574" stroke-width="1.5" opacity="0.4"/>
+  <rect x="75" y="205" width="250" height="170" rx="6" fill="#ffffff" fill-opacity="0.3"/>
+  
+  <!-- Baby name -->
+  <text x="200" y="255" font-family="cursive" font-size="42" fill="#c9904d" text-anchor="middle" font-weight="400">Rafif Ahmad</text>
+  <text x="200" y="280" font-family="cursive" font-size="42" fill="#c9904d" text-anchor="middle" font-weight="400">Maulana</text>
+  
+  <!-- Small divider -->
+  <line x1="150" y1="305" x2="250" y2="305" stroke="#d4a574" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Parents -->
+  <text x="200" y="330" font-family="serif" font-size="12" fill="#8b6f47" text-anchor="middle" opacity="0.7">Putra dari</text>
+  <text x="200" y="350" font-family="serif" font-size="14" fill="#8b6f47" text-anchor="middle">Bapak Rizki &amp; Ibu Laila</text>
+  <text x="200" y="368" font-family="serif" font-size="11" fill="#8b6f47" text-anchor="middle" opacity="0.6">Lahir 1 Oktober 2026</text>
+  
+  <!-- Event details -->
+  <text x="200" y="420" font-family="serif" font-size="16" fill="#c9904d" text-anchor="middle" letter-spacing="1">Minggu, 15 Oktober 2026</text>
+  <text x="200" y="440" font-family="serif" font-size="13" fill="#8b6f47" text-anchor="middle" opacity="0.7">Pukul 10.00 WIB</text>
+  
+  <!-- Venue -->
+  <text x="200" y="475" font-family="serif" font-size="14" fill="#8b6f47" text-anchor="middle">Kediaman Keluarga</text>
+  <text x="200" y="495" font-family="serif" font-size="12" fill="#8b6f47" text-anchor="middle" opacity="0.6">Jl. Kenangan No. 123, Jakarta</text>
+  
+  <!-- Bottom ornament -->
+  <g transform="translate(200, 530)">
+    <circle cx="0" cy="0" r="3" fill="#c9904d" opacity="0.4"/>
+    <path d="M -25 0 L -8 0 M 8 0 L 25 0" stroke="#d4a574" stroke-width="0.8" opacity="0.4"/>
+  </g>
+  
+  <!-- Footer -->
+  <text x="200" y="565" font-family="serif" font-size="9" fill="#8b6f47" text-anchor="middle" opacity="0.5" letter-spacing="2">TURUT MENGUNDANG</text>
+</svg>

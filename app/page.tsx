@@ -23,46 +23,71 @@ export default function Home() {
 
       <main>
         {/* ============ HERO ============ */}
-        <section className="relative overflow-hidden bg-bg px-4 py-20 sm:px-6 sm:py-28">
+        <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-b from-bg via-gold-pale/20 to-bg px-4 py-24 sm:px-6">
+          {/* Background pattern */}
+          <div className="pointer-events-none absolute inset-0 opacity-[0.02]" 
+               style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '40px 40px' }} 
+               aria-hidden />
+          
           <div
             className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full opacity-40 blur-3xl"
             style={{ background: "radial-gradient(circle, #fef9ee 0%, transparent 70%)" }}
             aria-hidden
           />
-          <div className="relative mx-auto max-w-4xl text-center">
-            <p className="text-xs font-medium tracking-[0.4em] text-gold uppercase">
-              {site.brand} · {site.tagline}
-            </p>
-            <h1 className="mt-6 font-serif text-4xl leading-tight sm:text-6xl">
-              Undangan Digital yang
-              <span className="font-script text-gold"> Berkesan</span> untuk
-              Hari Spesialmu
+
+          <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
+            {/* Badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/50 px-4 py-2 text-sm backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-gold"></span>
+              </span>
+              <span className="text-ink-soft">Dipercaya 200+ klien di Indonesia</span>
+            </div>
+
+            <h1 className="font-serif text-4xl leading-[1.15] tracking-tight sm:text-6xl lg:text-7xl">
+              Undangan Digital <br className="hidden sm:inline"/>
+              <span className="font-script text-gold">Elegan & Berkesan</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
-              Pilih desain dari katalog, isi data acara, kami yang buatkan.
-              Link undangan premium dikirim langsung ke WhatsApp-mu — tanpa
-              cetak, tanpa ribet.
+            
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+              Hadirkan kesan pertama yang tak terlupakan. Undangan interaktif untuk pernikahan, 
+              khitanan, akikah, dan acara spesial — mudah dibagikan, ramah lingkungan.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/katalog"
-                className="w-full rounded-full bg-ink px-8 py-4 font-medium text-white transition-colors hover:bg-gold sm:w-auto"
+                className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gold px-10 font-medium text-gold-foreground shadow-lg shadow-gold/20 transition-all hover:scale-105 hover:bg-gold/90 hover:shadow-xl"
               >
-                Lihat Katalog Desain
+                Lihat Katalog
+                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
               <a
-                href={waLink("Halo, saya mau tanya tentang undangan digital.")}
+                href={waLink("Halo, saya mau konsultasi undangan digital")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-full border border-gold px-8 py-4 font-medium text-gold transition-colors hover:bg-gold-pale sm:w-auto"
+                className="inline-flex h-14 items-center justify-center rounded-full border-2 border-gold/30 bg-white/50 px-10 font-medium backdrop-blur-sm transition-all hover:scale-105 hover:border-gold hover:bg-white"
               >
-                Tanya via WhatsApp
+                Konsultasi Gratis
               </a>
             </div>
-            <p className="mt-6 text-sm text-ink-soft">
-              Mulai <span className="font-semibold text-gold">{rupiah(hargaMulai)}</span> ·
-              jadi 1–3 hari · revisi sampai puas
-            </p>
+
+            {/* Social proof */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm text-ink-soft">
+              <div className="flex items-center gap-2">
+                <svg className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <span>4.9 dari 5.0</span>
+              </div>
+              <div className="h-4 w-px bg-gold/20" />
+              <span>Respon &lt;24 jam</span>
+              <div className="h-4 w-px bg-gold/20" />
+              <span>Mulai {rupiah(hargaMulai)}</span>
+            </div>
           </div>
         </section>
 

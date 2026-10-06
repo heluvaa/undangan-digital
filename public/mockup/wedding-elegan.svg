@@ -1,0 +1,54 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#1c1917"/>
+  
+  <!-- Texture -->
+  <defs>
+    <pattern id="grain" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.5" fill="#292524" opacity="0.15"/>
+    </pattern>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a16207;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="600" fill="url(#grain)"/>
+  
+  <!-- Border ornament -->
+  <rect x="30" y="40" width="340" height="520" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.6"/>
+  <rect x="35" y="45" width="330" height="510" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.4"/>
+  
+  <!-- Corner flourish -->
+  <path d="M 40 50 Q 50 50 50 60 M 50 50 Q 50 60 60 60" stroke="#c9a227" fill="none" stroke-width="1" opacity="0.7"/>
+  <path d="M 360 50 Q 350 50 350 60 M 350 50 Q 350 60 340 60" stroke="#c9a227" fill="none" stroke-width="1" opacity="0.7"/>
+  <path d="M 40 550 Q 50 550 50 540 M 50 550 Q 50 540 60 540" stroke="#c9a227" fill="none" stroke-width="1" opacity="0.7"/>
+  <path d="M 360 550 Q 350 550 350 540 M 350 550 Q 350 540 340 540" stroke="#c9a227" fill="none" stroke-width="1" opacity="0.7"/>
+  
+  <!-- Header -->
+  <text x="200" y="100" font-family="serif" font-size="12" fill="#f5f1e8" text-anchor="middle" letter-spacing="3" opacity="0.8">THE WEDDING OF</text>
+  
+  <!-- Names -->
+  <text x="200" y="200" font-family="cursive" font-size="52" fill="#c9a227" text-anchor="middle" font-weight="300">Jessica</text>
+  <text x="200" y="230" font-family="serif" font-size="24" fill="#c9a227" text-anchor="middle" opacity="0.6">&amp;</text>
+  <text x="200" y="280" font-family="cursive" font-size="52" fill="#c9a227" text-anchor="middle" font-weight="300">Michael</text>
+  
+  <!-- Divider ornament -->
+  <circle cx="200" cy="320" r="2" fill="#c9a227" opacity="0.6"/>
+  <line x1="140" y1="320" x2="190" y2="320" stroke="#c9a227" stroke-width="0.5" opacity="0.4"/>
+  <line x1="210" y1="320" x2="260" y2="320" stroke="#c9a227" stroke-width="0.5" opacity="0.4"/>
+  
+  <!-- Date -->
+  <text x="200" y="360" font-family="serif" font-size="18" fill="#f5f1e8" text-anchor="middle" letter-spacing="1">15 • 11 • 2026</text>
+  
+  <!-- Venue -->
+  <text x="200" y="400" font-family="serif" font-size="14" fill="#f5f1e8" text-anchor="middle" opacity="0.7">The Grand Ballroom</text>
+  <text x="200" y="420" font-family="serif" font-size="12" fill="#f5f1e8" text-anchor="middle" opacity="0.6">Jakarta</text>
+  
+  <!-- Bottom ornament -->
+  <path d="M 200 460 Q 180 470 180 490 T 200 510" stroke="#c9a227" fill="none" stroke-width="1" opacity="0.5"/>
+  <path d="M 200 460 Q 220 470 220 490 T 200 510" stroke="#c9a227" fill="none" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Footer message -->
+  <text x="200" y="540" font-family="serif" font-size="11" fill="#f5f1e8" text-anchor="middle" opacity="0.5" letter-spacing="1">TURUT MENGUNDANG</text>
+</svg>

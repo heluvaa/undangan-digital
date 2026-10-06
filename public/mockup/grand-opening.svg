@@ -1,0 +1,61 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#1a1a2e"/>
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="techGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d5afe;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0.2" />
+    </linearGradient>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3d5afe" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+  </defs>
+  
+  <rect width="400" height="600" fill="url(#grid)"/>
+  <rect width="400" height="600" fill="url(#techGrad)"/>
+  
+  <!-- Circuit lines decoration -->
+  <g opacity="0.2">
+    <line x1="50" y1="80" x2="150" y2="80" stroke="#00e5ff" stroke-width="1"/>
+    <circle cx="150" cy="80" r="3" fill="#00e5ff"/>
+    <line x1="250" y1="90" x2="350" y2="90" stroke="#3d5afe" stroke-width="1"/>
+    <circle cx="250" cy="90" r="3" fill="#3d5afe"/>
+  </g>
+  
+  <!-- Header -->
+  <rect x="120" y="120" width="160" height="36" rx="18" fill="#3d5afe" opacity="0.2"/>
+  <text x="200" y="144" font-family="sans-serif" font-size="14" fill="#00e5ff" text-anchor="middle" letter-spacing="2" font-weight="700">GRAND OPENING</text>
+  
+  <!-- Company logo placeholder -->
+  <rect x="170" y="180" width="60" height="60" rx="8" fill="#3d5afe" opacity="0.3"/>
+  <text x="200" y="218" font-family="sans-serif" font-size="32" fill="#00e5ff" text-anchor="middle" font-weight="900">T</text>
+  
+  <!-- Company name -->
+  <text x="200" y="280" font-family="sans-serif" font-size="36" fill="#ffffff" text-anchor="middle" font-weight="700">TechHub</text>
+  <text x="200" y="310" font-family="sans-serif" font-size="36" fill="#00e5ff" text-anchor="middle" font-weight="700">Coworking</text>
+  
+  <!-- Divider -->
+  <rect x="100" y="335" width="200" height="2" fill="url(#techGrad)"/>
+  
+  <!-- Details box -->
+  <rect x="60" y="360" width="280" height="120" rx="8" fill="none" stroke="#3d5afe" stroke-width="1.5" opacity="0.4"/>
+  
+  <text x="200" y="390" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.7" letter-spacing="1">LAUNCHING EVENT</text>
+  <text x="200" y="420" font-family="sans-serif" font-size="18" fill="#00e5ff" text-anchor="middle" font-weight="600" letter-spacing="0.5">Jumat, 1 November 2026</text>
+  <text x="200" y="445" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" opacity="0.8">17.00 - 20.00 WIB</text>
+  <text x="200" y="467" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.6">Free Snacks & Networking</text>
+  
+  <!-- Venue -->
+  <text x="200" y="510" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="600">Gedung Cyber Tower Lt. 5</text>
+  <text x="200" y="530" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.7">Jl. Sudirman No. 88, Jakarta</text>
+  
+  <!-- Bottom decoration -->
+  <g opacity="0.2">
+    <line x1="50" y1="560" x2="120" y2="560" stroke="#00e5ff" stroke-width="1"/>
+    <circle cx="120" cy="560" r="2" fill="#00e5ff"/>
+    <line x1="280" y1="565" x2="350" y2="565" stroke="#3d5afe" stroke-width="1"/>
+    <circle cx="280" cy="565" r="2" fill="#3d5afe"/>
+  </g>
+</svg>

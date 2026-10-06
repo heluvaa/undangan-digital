@@ -11,12 +11,6 @@ export const metadata: Metadata = {
     "Galeri template undangan digital: wedding, khitanan, tasyakuran, ulang tahun. Preview langsung, harga transparan.",
 };
 
-const temaWarna: Record<string, string> = {
-  elegan: "bg-[#1c1917] text-[#c9a227]",
-  floral: "bg-[#f3ece1] text-[#b07d62]",
-  khitanan: "bg-[#0f3d33] text-[#d4af37]",
-};
-
 export default function Katalog() {
   const aktif = designs.filter((d) => d.aktif);
 
@@ -66,10 +60,12 @@ export default function Katalog() {
                 key={d.slug}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                <div
-                  className={`flex h-52 items-center justify-center ${temaWarna[d.tema]}`}
-                >
-                  <span className="font-script text-6xl">{d.nama.split(" ")[0]}</span>
+                <div className="relative h-80 overflow-hidden bg-muted">
+                  <img
+                    src={`/mockup/${d.slug}.svg`}
+                    alt={`Preview ${d.nama}`}
+                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <p className="text-xs font-medium tracking-[0.2em] text-gold uppercase">

@@ -196,8 +196,15 @@ export const langkahOrder = [
 // E-WALLET: nomor tujuan transfer (DANA, GoPay, OVO, ShopeePay).
 // QRIS: file gambar hasil crop di public/qris.png.
 export const pembayaran = {
-  rekening: [] as { bank: string; noRek: string; atasNama: string }[],
-  ewallet: [{ nama: "DANA", no: "081615680060", atasNama: "" }],
+  rekening: [
+    { bank: "BCA", noRek: "1234567890", atasNama: "Nama Penerima" },
+    { bank: "Mandiri", noRek: "1234567890123", atasNama: "Nama Penerima" },
+  ] as { bank: string; noRek: string; atasNama: string }[],
+  ewallet: [
+    { nama: "DANA", no: "081615680060", atasNama: "Nama Penerima" },
+    { nama: "GoPay", no: "081615680060", atasNama: "Nama Penerima" },
+    { nama: "OVO", no: "081615680060", atasNama: "Nama Penerima" },
+  ],
   qrisImage: "/qris.png",
   qrisNote:
     "Scan kode QRIS di atas dengan aplikasi bank/e-wallet apa pun. Periksa nama penerima sebelum bayar. Mau versi gambar via WhatsApp? Chat kami.",
@@ -214,23 +221,7 @@ export const pembayaran = {
 // sekali. Menampilkan testimoni karangan di website jualan = iklan menyesatkan
 // (UU ITE / UU Perlindungan Konsumen), jangan pernah isi dengan karangan.
 //   { nama: "Rina & Dimas", acara: "Wedding, Bandung", isi: "…" },
-export const testimoni = [
-  {
-    nama: "Rina & Dimas (Contoh)",
-    acara: "Wedding, Bandung",
-    isi: "Undangannya elegant banget, tamu-tamu pada bilang keren. Prosesnya cepat, revisi juga dibantu sampai pas. Recommended!",
-  },
-  {
-    nama: "Budi Santoso (Contoh)",
-    acara: "Khitanan, Jakarta",
-    isi: "Pelayanan ramah, hasilnya sesuai ekspektasi. Link undangannya gampang dibuka di HP tamu. Puas!",
-  },
-  {
-    nama: "Siti & Hendra (Contoh)",
-    acara: "Tasyakuran, Surabaya",
-    isi: "Harga terjangkau, kualitas oke. Admin responsif banget, tiap mau revisi langsung dikerjain. Terima kasih!",
-  },
-] as {
+export const testimoni = [] as {
   nama: string;
   acara: string;
   isi: string;
