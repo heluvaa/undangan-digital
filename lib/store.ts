@@ -15,9 +15,11 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { Order, Ucapan } from "./types";
 
-const DATA_DIR = path.resolve(
-  process.env.DATA_DIR ?? path.join(process.cwd(), "data"),
-);
+// Vercel serverless: cwd read-only -> tulis ke /tmp (per-instant, tak awet).
+// VPS: tetap di data/ dalam direktori proyek.
+const DATA_DIR = process.env.VERCEL
+  ? path.join(process.env.TMPDIR ?? "/tmp", "undangan-data")
+  : path.resolve(process.env.DATA_DIR ?? path.join(process.cwd(), "data"));
 const ORDERS_FILE = path.join(DATA_DIR, "orders.json");
 const UCAPAN_FILE = path.join(DATA_DIR, "ucapan.json");
 

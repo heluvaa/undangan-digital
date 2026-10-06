@@ -4,7 +4,7 @@
 // ============================================================
 
 export const site = {
-  brand: "UndanganKu",
+  brand: "Undangkan Aja",
   tagline: "Undangan Digital Custom",
   wa: "6281913711189", // ganti dengan nomor WhatsApp bisnis (format 62...)
   // PIN admin dibaca dari env ADMIN_KEY (tidak ikut ter-commit ke GitHub).

@@ -23,7 +23,7 @@ const vibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://undanganku.example.com"),
+  metadataBase: new URL("https://undangkanaja.vercel.app"),
   title: {
     default: `${site.brand} — Jasa Undangan Digital Custom`,
     template: `%s — ${site.brand}`,
