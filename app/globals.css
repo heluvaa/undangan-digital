@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #fafaf9;
+  --color-ink: #1c1917;
+  --color-ink-soft: #57534e;
+  --color-muted: #e8ecf0;
+  --color-muted-ink: #475569;
+  --color-card: #ffffff;
+  --color-border: #d6d3d1;
+  --color-gold: #a16207;
+  --color-gold-soft: #ca8a04;
+  --color-gold-pale: #fef9ee;
+  --color-danger: #dc2626;
+  --color-good: #15803d;
+  --font-sans: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Infant", serif;
+  --font-script: var(--font-vibes), "Great Vibes", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold-pale);
+  color: var(--color-gold);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+/* reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ornamental divider */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-gold);
+}
+.ornament::before,
+.ornament::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, var(--color-border), transparent);
+}
+
+/* subtle paper grain for invitation covers */
+.grain {
+  background-image: radial-gradient(rgba(28, 25, 23, 0.045) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* floral corner vine (CSS only) */
+.vine::before,
+.vine::after {
+  content: "❀";
+  position: absolute;
+  color: var(--color-gold-soft);
+  font-size: 1.25rem;
+  opacity: 0.6;
+}
+.vine::before {
+  top: 0.75rem;
+  left: 0.9rem;
+}
+.vine::after {
+  bottom: 0.75rem;
+  right: 0.9rem;
+  transform: rotate(180deg);
+}
+
+/* amplop digital */
+.amplop-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.amplop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -12px rgba(161, 98, 7, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .amplop-btn {
+    transition: none;
+  }
+}
