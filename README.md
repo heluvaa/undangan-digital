@@ -1,4 +1,4 @@
-# UndanganKu — Jasa Undangan Digital
+# Undangkan Aja — Jasa Undangan Digital
 
 Website bisnis jasa pembuatan undangan digital custom. Customer pilih desain dari
 katalog, isi form order, bayar transfer/QRIS, lalu pemilik buatkan undangannya
@@ -53,8 +53,7 @@ Teks situs, harga, paket, nomor WA, rekening: **`lib/content.ts`**.
 - [ ] Set env `ADMIN_KEY` (PIN `/admin`) di `.env.local` / Vercel Environment Variables
 - [ ] `lib/content.ts` → `pembayaran.rekening` (nomor rekening asli)
 - [ ] `lib/content.ts` → `site.demo = false` setelah testimoni diganti data asli
-- [ ] `app/layout.tsx` → `metadataBase` + `app/robots.ts` + `app/sitemap.ts`
-      (ganti `https://undanganku.example.com` dengan domain asli)
+- [x] `metadataBase` + `robots.ts` + `sitemap.ts` sudah ke `https://undangkanaja.vercel.app`
 - [ ] `public/foto/` → ganti SVG placeholder dengan foto asli
 - [ ] Testimoni di `lib/content.ts` masih CONTOH — minta izin klien dulu
       sebelum pakai nama asli.
